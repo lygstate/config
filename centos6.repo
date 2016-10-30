@@ -1,0 +1,5 @@
+[sclo]
+name=sclo
+baseurl=http://mirror.centos.org/centos/6/sclo/x86_64/rh/
+gpgcheck=0
+enabled=1
