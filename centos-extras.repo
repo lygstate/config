@@ -21,16 +21,14 @@ name=Node.js Packages for Enterprise Linux $releasever - $basearch
 baseurl=https://rpm.nodesource.com/pub_6.x/el/$releasever/$basearch
 failovermethod=priority
 enabled=1
-gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/NODESOURCE-GPG-SIGNING-KEY-EL
+gpgcheck=0
 
 [nodesource-source]
 name=Node.js for Enterprise Linux $releasever - $basearch - Source
 baseurl=https://rpm.nodesource.com/pub_6.x/el/$releasever/SRPMS
 failovermethod=priority
 enabled=0
-gpgkey=file:///etc/pki/rpm-gpg/NODESOURCE-GPG-SIGNING-KEY-EL
-gpgcheck=1
+gpgcheck=0
 
 [nginx]
 name=nginx repo
