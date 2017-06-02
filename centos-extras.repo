@@ -18,14 +18,14 @@ enabled=1
 
 [nodesource]
 name=Node.js Packages for Enterprise Linux $releasever - $basearch
-baseurl=https://rpm.nodesource.com/pub_6.x/el/$releasever/$basearch
+baseurl=https://rpm.nodesource.com/pub_8.x/el/$releasever/$basearch
 failovermethod=priority
 enabled=1
 gpgcheck=0
 
 [nodesource-source]
 name=Node.js for Enterprise Linux $releasever - $basearch - Source
-baseurl=https://rpm.nodesource.com/pub_6.x/el/$releasever/SRPMS
+baseurl=https://rpm.nodesource.com/pub_8.x/el/$releasever/SRPMS
 failovermethod=priority
 enabled=0
 gpgcheck=0
