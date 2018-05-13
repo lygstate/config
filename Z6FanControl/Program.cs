@@ -93,6 +93,50 @@ namespace Z6FanControl
             }
             return num;
         }
+
+        /// <summary>
+        /// 设置风扇速度
+        /// </summary>
+        /// <param name="speed">风扇速度，范围 [1,200]</param>
+        /// <returns></returns>
+        static void SetFanSpeed(uint speed)
+        {
+            /* L0 不知道是否存在 */
+            /* L0 40 degree */
+            WMIEC.WMIWriteECRAM(1857UL, speed);
+
+            /* L1 45 degree */
+            WMIEC.WMIWriteECRAM(1858UL, speed);
+
+            /* L2 50 degree */
+            WMIEC.WMIWriteECRAM(1859UL, speed);
+
+            /* L3 55 degree */
+            WMIEC.WMIWriteECRAM(1860UL, speed);
+
+            /* L4 60 degree */
+            WMIEC.WMIWriteECRAM(1861UL, speed);
+
+            /* L5 65 degree */
+            WMIEC.WMIWriteECRAM(1862UL, speed);
+
+            if (false) {
+                /* 不确定是否支持 */
+                /* L6 70 degree */
+                WMIEC.WMIWriteECRAM(1863UL, speed);
+
+                /* L7 75 degree */
+                WMIEC.WMIWriteECRAM(1864UL, speed);
+
+                /* L8 80 degree */
+                WMIEC.WMIWriteECRAM(1865UL, speed);
+            }
+
+
+            /* 自定义不同温度的风扇速度，现在是将所有风扇速度设置为一样 */
+            WMIEC.WMIWriteECRAM(1873UL, 160UL);
+        }
+
         static void Main(string[] args)
         {
             while (true) {
@@ -109,33 +153,14 @@ namespace Z6FanControl
                     Thread.Sleep(3000);
                     SetFanLevel(0);
                 }
-                /* 自定义不同级别 */
-                WMIEC.WMIWriteECRAM(1873UL, 160UL);
-                if (false) { 
-                    /* L1 45 degree*/
-                    WMIEC.WMIWriteECRAM(1859UL, 60UL);
-                    /* L2 50 degree*/
-                    WMIEC.WMIWriteECRAM(1860UL, 80UL);
-                    /* L3 55 degree*/
-                    WMIEC.WMIWriteECRAM(1861UL, 100UL);
-                    /* L2 60 degree*/
-                    WMIEC.WMIWriteECRAM(1862UL, 120UL);
-                    /* L2 65 degree*/
-                    WMIEC.WMIWriteECRAM(1863UL, 140UL);
-                }
 
-                /* 1 - 200 */
-                uint allToLevel = 45;
-                WMIEC.WMIWriteECRAM(1858UL, allToLevel);
-                WMIEC.WMIWriteECRAM(1859UL, allToLevel);
-                WMIEC.WMIWriteECRAM(1860UL, allToLevel);
-                WMIEC.WMIWriteECRAM(1861UL, allToLevel);
-                WMIEC.WMIWriteECRAM(1862UL, allToLevel);
-                WMIEC.WMIWriteECRAM(1863UL, allToLevel);
-                WMIEC.WMIWriteECRAM(1864UL, allToLevel);
+                /* 转速35是最大的没有音量的声音，适合办公或者看电影，比较安静，深夜办公 */
+                SetFanSpeed(35);
 
+                /* 转速45是最大的没有音量的声音，适合办公或者看电影，比较安静，白天办公 */
+                // SetFanSpeed(45);
 
-                Thread.Sleep(3000);
+                Thread.Sleep(500);
             }
         }
     }
