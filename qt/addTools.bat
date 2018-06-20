@@ -42,7 +42,7 @@ sdktool addQt ^
 sdktool addQt ^
     --id "company.product.qt5.9.4.msvc2015_32bit" ^
     --name "Qt %%{Qt:Version} MSVC2015 32bit" ^
-    --qmake %QTROOT%\Qt5.9.4\5.9\msvc2015\bin\qmake.exe ^
+    --qmake %QTROOT%\Qt5.9.4\5.9.4\msvc2015\bin\qmake.exe ^
     --type Qt4ProjectManager.QtVersion.Desktop
 
 sdktool addTC  ^
@@ -79,7 +79,7 @@ sdktool addKit ^
     --name "Desktop Qt %%{Qt:Version} MSVC2015 32bit" ^
     --devicetype Desktop ^
     --qt "company.product.qt5.9.4.msvc2015_32bit"
-
+    
 sdktool addKit ^
     --id "company.product.kit.arm-2010q1-189-arm-uclinuxeabi" ^
     --name "uClinux (Sourcery 2010q1, Emcraft STM32F429)" ^
