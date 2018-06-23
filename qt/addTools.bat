@@ -1,9 +1,9 @@
 cd /d C:\
-set ROOT=C:\
-cd /d C:\Qt
+set ROOT=C:
+cd /d Qt
 set QTROOT=%CD%
 
-cd /d qtcreator-4.6.2\bin
+cd /d Qt5.11.1\Tools\QtCreator\bin
 :: sdktool https://github.com/qt-creator/qt-creator/tree/master/src/tools/sdktool
 sdktool rmQt --id "company.product.qt5.1.1.msvc2010_opengl_32bit"
 sdktool rmQt --id "company.product.qt5.5.1.msvc2010_32bit"
@@ -64,18 +64,6 @@ sdktool addQt ^
     --id "company.product.qt5.5.1.msvc2010_32bit" ^
     --name "Qt %%{Qt:Version} MSVC2010 32bit" ^
     --qmake %QTROOT%\Qt5.5.1\5.5\msvc2010\bin\qmake.exe ^
-    --type Qt4ProjectManager.QtVersion.Desktop
-
-sdktool addQt ^
-    --id "company.product.qt5.7.1.msvc2015_32bit" ^
-    --name "Qt %%{Qt:Version} MSVC2015 32bit" ^
-    --qmake %QTROOT%\Qt5.7.1\5.7\msvc2015\bin\qmake.exe ^
-    --type Qt4ProjectManager.QtVersion.Desktop
-
-sdktool addQt ^
-    --id "company.product.qt5.7.1.msvc2015_64bit" ^
-    --name "Qt %%{Qt:Version} MSVC2015 64bit" ^
-    --qmake %QTROOT%\Qt5.7.1\5.7\msvc2015_64\bin\qmake.exe ^
     --type Qt4ProjectManager.QtVersion.Desktop
 
 sdktool addQt ^
