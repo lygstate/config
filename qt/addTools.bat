@@ -15,6 +15,7 @@ sdktool rmTC --id "ProjectExplorer.ToolChain.Gcc:arm-2010q1-189-arm-uclinuxeabi-
 sdktool rmDebugger --id "company.product.toolchain.gdb.arm-2010q1-189-arm-uclinuxeabi"
 sdktool rmKit --id "company.product.kit.arm-2010q1-189-arm-uclinuxeabi"
 sdktool rmKit --id "company.product.kit.qt5.5.1.msvc2010_32bit"
+sdktool rmKit --id "company.product.kit.qt5.9.4.msvc2015_32bit"
 
 sdktool rmTC --id "ProjectExplorer.ToolChain.Gcc:arm-linux-gnueabihf-4.9.2-C"
 sdktool rmTC --id "ProjectExplorer.ToolChain.Gcc:arm-linux-gnueabihf-4.9.2-CPP"
@@ -99,13 +100,18 @@ sdktool addKit ^
     --id "company.product.kit.qt5.5.1.msvc2010_32bit" ^
     --name "Desktop Qt %%{Qt:Version} MSVC2010 32bit" ^
     --devicetype Desktop ^
-    --qt "company.product.qt5.5.1.msvc2010_32bit"
+    --qt "company.product.qt5.5.1.msvc2010_32bit" ^
+    --Ctoolchain "x86-windows-msvc2010-pe-32bit" ^
+    --Cxxtoolchain "x86-windows-msvc2010-pe-32bit"
 
 sdktool addKit ^
     --id "company.product.kit.qt5.9.4.msvc2015_32bit" ^
     --name "Desktop Qt %%{Qt:Version} MSVC2015 32bit" ^
     --devicetype Desktop ^
-    --qt "company.product.qt5.9.4.msvc2015_32bit"
+    --qt "company.product.qt5.9.4.msvc2015_32bit" ^
+    --Ctoolchain "x86-windows-msvc2015-pe-32bit" ^
+    --Cxxtoolchain "x86-windows-msvc2015-pe-32bit"
+
     
 sdktool addKit ^
     --id "company.product.kit.arm-2010q1-189-arm-uclinuxeabi" ^
