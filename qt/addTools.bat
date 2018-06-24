@@ -9,13 +9,13 @@ sdktool rmQt --id "company.product.qt5.1.1.msvc2010_opengl_32bit"
 sdktool rmQt --id "company.product.qt5.5.1.msvc2010_32bit"
 sdktool rmQt --id "company.product.qt5.7.1.msvc2015_32bit"
 sdktool rmQt --id "company.product.qt5.7.1.msvc2015_64bit"
-sdktool rmQt --id "company.product.qt5.9.4.msvc2015_32bit"
+sdktool rmQt --id "company.product.qt5.9.6.msvc2015_32bit"
 sdktool rmTC --id "ProjectExplorer.ToolChain.Gcc:arm-2010q1-189-arm-uclinuxeabi-C"
 sdktool rmTC --id "ProjectExplorer.ToolChain.Gcc:arm-2010q1-189-arm-uclinuxeabi-CPP"
 sdktool rmDebugger --id "company.product.toolchain.gdb.arm-2010q1-189-arm-uclinuxeabi"
 sdktool rmKit --id "company.product.kit.arm-2010q1-189-arm-uclinuxeabi"
 sdktool rmKit --id "company.product.kit.qt5.5.1.msvc2010_32bit"
-sdktool rmKit --id "company.product.kit.qt5.9.4.msvc2015_32bit"
+sdktool rmKit --id "company.product.kit.qt5.9.6.msvc2015_32bit"
 
 sdktool rmTC --id "ProjectExplorer.ToolChain.Gcc:arm-linux-gnueabihf-4.9.2-C"
 sdktool rmTC --id "ProjectExplorer.ToolChain.Gcc:arm-linux-gnueabihf-4.9.2-CPP"
@@ -68,9 +68,9 @@ sdktool addQt ^
     --type Qt4ProjectManager.QtVersion.Desktop
 
 sdktool addQt ^
-    --id "company.product.qt5.9.4.msvc2015_32bit" ^
-    --name "Qt %%{Qt:Version} MSVC2015 32bit" ^
-    --qmake %QTROOT%\Qt5.9.4\5.9.4\msvc2015\bin\qmake.exe ^
+    --id "company.product.qt5.9.6.msvc2015_32bit" ^
+    --name "Qt 5.9.6 MSVC2015 32bit" ^
+    --qmake %QTROOT%\Qt5.9.6\5.9.6\msvc2015\bin\qmake.exe ^
     --type Qt4ProjectManager.QtVersion.Desktop
 
 sdktool addTC  ^
@@ -105,10 +105,10 @@ sdktool addKit ^
     --Cxxtoolchain "x86-windows-msvc2010-pe-32bit"
 
 sdktool addKit ^
-    --id "company.product.kit.qt5.9.4.msvc2015_32bit" ^
-    --name "Desktop Qt %%{Qt:Version} MSVC2015 32bit" ^
+    --id "company.product.kit.qt5.9.6.msvc2015_32bit" ^
+    --name "Desktop Qt 5.9.6 MSVC2015 32bit" ^
     --devicetype Desktop ^
-    --qt "company.product.qt5.9.4.msvc2015_32bit" ^
+    --qt "company.product.qt5.9.6.msvc2015_32bit" ^
     --Ctoolchain "x86-windows-msvc2015-pe-32bit" ^
     --Cxxtoolchain "x86-windows-msvc2015-pe-32bit"
 
