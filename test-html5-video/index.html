@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="#" />
+  </head>
+  <body>
+    <div style="text-align: center">
+      <button id="playPause">播放/暂停</button>
+      <button id="makeBig">大</button>
+      <button id="makeNormal">中</button>
+      <button id="makeSmall">小</button>
+      <br />
+      <video id="video1" width="420" style="margin-top: 15px">
+        <source src="/mov_bbb.mp4" type="video/mp4" />
+        <source src="/mov_bbb.ogg" type="video/ogg" />
+      </video>
+    </div>
+
+    <script type="text/javascript">
+      function getVideo() {
+        return document.getElementById("video1");
+      }
+
+      document.getElementById("playPause").onclick = function () {
+        var myVideo = getVideo();
+        if (myVideo.paused) myVideo.play();
+        else myVideo.pause();
+      };
+      document.getElementById("makeBig").onclick = function () {
+        var myVideo = getVideo();
+        myVideo.width = 560;
+      };
+      document.getElementById("makeSmall").onclick = function () {
+        var myVideo = getVideo();
+        myVideo.width = 320;
+      };
+      document.getElementById("makeNormal").onclick = function () {
+        var myVideo = getVideo();
+        myVideo.width = 420;
+      };
+      console.log("Video init done");
+    </script>
+  </body>
+</html>
