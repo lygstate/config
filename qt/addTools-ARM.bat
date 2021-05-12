@@ -40,4 +40,34 @@ sdktool addKit ^
     --Ctoolchain "ProjectExplorer.ToolChain.Gcc:arm-linux-gnueabihf-4.9.2-C" ^
     --Cxxtoolchain "ProjectExplorer.ToolChain.Gcc:arm-linux-gnueabihf-4.9.2-CPP"
 
+sdktool addTC  ^
+    --id "ProjectExplorer.ToolChain.Gcc:arm-2010q1-189-arm-uclinuxeabi-C" ^
+    --language 1 ^
+    --name "GCC arm-2010q1-189-arm-uclinuxeabi (C)" ^
+    --path "%ROOT%\GCC\arm-2010q1-189-arm-uclinuxeabi\bin\arm-uclinuxeabi-gcc.exe" ^
+    --abi "arm-linux-generic-elf-32" ^
+    --supportedAbis arm-linux-generic-elf-32
+sdktool addTC  ^
+    --id "ProjectExplorer.ToolChain.Gcc:arm-2010q1-189-arm-uclinuxeabi-CPP" ^
+    --language 2 ^
+    --name "GCC arm-2010q1-189-arm-uclinuxeabi(C++)" ^
+    --path "%ROOT%\GCC\arm-2010q1-189-arm-uclinuxeabi\bin\arm-uclinuxeabi-g++.exe" ^
+    --abi "arm-linux-generic-elf-32" ^
+    --supportedAbis arm-linux-generic-elf-32
+sdktool addDebugger ^
+    --id "company.product.toolchain.gdb.arm-2010q1-189-arm-uclinuxeabi" ^
+    --name "GDB (Sourcery G++ Lite for ARM uClinux, arm-2010q1-189)" ^
+    --engine 1 ^
+    --binary "%ROOT%\GCC\arm-2010q1-189-arm-uclinuxeabi\bin\arm-uclinuxeabi-gdb.exe" ^
+    --abis arm-linux-generic-elf-32
+sdktool addKit ^
+    --id "company.product.kit.arm-2010q1-189-arm-uclinuxeabi" ^
+    --name "uClinux (Sourcery 2010q1, Emcraft STM32F429)" ^
+    --debuggerid "company.product.toolchain.gdb.arm-2010q1-189-arm-uclinuxeabi" ^
+    --devicetype RemoteLinux.EmbeddedLinuxQt ^
+    --qt "" ^
+    --sysroot "%ROOT%\GCC\arm-2010q1-189-arm-uclinuxeabi\arm-uclinuxeabi\libc" ^
+    --Ctoolchain "ProjectExplorer.ToolChain.Gcc:arm-2010q1-189-arm-uclinuxeabi-C" ^
+    --Cxxtoolchain "ProjectExplorer.ToolChain.Gcc:arm-2010q1-189-arm-uclinuxeabi-CPP"
+
 pause
