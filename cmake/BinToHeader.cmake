@@ -37,6 +37,8 @@ endfunction()
 #                     to this name and will be used a variable name for size variable.
 #   HEADER_FILE     - The path of header file.
 #   APPEND          - If specified appends to the header file instead of overwriting it
+#   STATIC_CONSTANT - If use `static const` instead `const`
+#   OUTPUT_SIZE_T   - If output `static const size_t`
 #   NULL_TERMINATE  - If specified a null byte(zero) will be append to the byte array. This will be
 #                     useful if the source file is a text file and we want to use the file contents
 #                     as string. But the size variable holds size of the byte array without this
