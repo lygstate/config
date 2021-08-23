@@ -1,4 +1,4 @@
-set QTROOT=C:\QT
+set QTROOT=C:\Qt
 set PATH=%PATH%;C:\Qt\Qt5.12.10\Tools\QtCreator\bin
 cd /d C:\Qt\Qt5.12.10\Tools\QtCreator\bin
 ::cmd /k
@@ -55,5 +55,18 @@ sdktool addKit ^
     --qt "company.product.qt5.9.9.msvc2015_64bit" ^
     --Ctoolchain "x86-windows-msvc2015-pe-64bit" ^
     --Cxxtoolchain "x86-windows-msvc2015-pe-64bit"
+
+sdktool addQt ^
+    --id "company.product.qt5.12.10.msvc2015_32bit" ^
+    --name "Qt 5.12.10 MSVC2015 32bit" ^
+    --qmake %QTROOT%\Qt5.12.10\5.12.10\msvc2015\bin\qmake.exe ^
+    --type Qt4ProjectManager.QtVersion.Desktop
+sdktool addKit ^
+    --id "company.product.kit.qt5.12.10.msvc2015_32bit" ^
+    --name "Desktop Qt 5.12.10 MSVC2015 32bit" ^
+    --devicetype Desktop ^
+    --qt "company.product.qt5.12.10.msvc2015_32bit" ^
+    --Ctoolchain "x86-windows-msvc2015-pe-32bit" ^
+    --Cxxtoolchain "x86-windows-msvc2015-pe-32bit"
 
 pause
