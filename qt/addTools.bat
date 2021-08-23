@@ -46,7 +46,7 @@ sdktool addKit ^
 sdktool addQt ^
     --id "company.product.qt5.9.9.msvc2015_64bit" ^
     --name "Qt 5.9.9 MSVC2015 64bit" ^
-    --qmake %QTROOT%\Qt5.9.9\5.9.9\msvc2015\bin\qmake.exe ^
+    --qmake %QTROOT%\Qt5.9.9\5.9.9\msvc2015_64\bin\qmake.exe ^
     --type Qt4ProjectManager.QtVersion.Desktop
 sdktool addKit ^
     --id "company.product.kit.qt5.9.9.msvc2015_64bit" ^

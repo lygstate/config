@@ -1,1 +1,4 @@
 删除 %AppData%\QtProject\
+
+备份C:\Qt\Qt5.12.10\Tools\QtCreator\share\qtcreator\QtProject
+执行addTools.bat
