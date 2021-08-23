@@ -1,9 +1,7 @@
-cd /d C:\
-set ROOT=C:
-cd /d Qt
-set QTROOT=%CD%
-
-cd /d %QTROOT%\qtcreator-4.14.2\bin
+set QTROOT=C:\QT
+set PATH=%PATH%;C:\Qt\Qt5.12.10\Tools\QtCreator\bin
+cd /d C:\Qt\Qt5.12.10\Tools\QtCreator\bin
+::cmd /k
 :: sdktool https://github.com/qt-creator/qt-creator/tree/master/src/tools/sdktool
 
 sdktool addQt ^
