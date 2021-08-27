@@ -1,6 +1,11 @@
 set QTROOT=C:\Qt
-set PATH=%PATH%;C:\Qt\Qt5.12.10\Tools\QtCreator\bin
-cd /d C:\Qt\Qt5.12.10\Tools\QtCreator\bin
+set QTCREATOR_ROOT=%QTROOT%\qtcreator-5.0.0
+rd /s /q %QTCREATOR_ROOT%\share\qtcreator\QtProject
+mkdir %QTCREATOR_ROOT%\share\qtcreator\QtProject
+copy QtCreator.ini %QTCREATOR_ROOT%\share\qtcreator\QtProject
+mkdir %QTCREATOR_ROOT%\share\qtcreator\QtProject\qtcreator\
+copy qtcreator %QTCREATOR_ROOT%\share\qtcreator\QtProject\qtcreator\
+set PATH=%PATH%;%QTCREATOR_ROOT%\bin
 ::cmd /k
 :: sdktool https://github.com/qt-creator/qt-creator/tree/master/src/tools/sdktool
 

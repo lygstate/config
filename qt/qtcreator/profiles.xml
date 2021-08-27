@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QtCreatorProfiles>
+<!-- Written by sdktool 4.13.1.0, 2021-05-13T06:09:55. -->
+<qtcreator>
+ <data>
+  <variable>Profile.Count</variable>
+  <value type="int">0</value>
+ </data>
+ <data>
+  <variable>Profile.Default</variable>
+  <value type="QString">company.product.kit.qt5.12.10.msvc2015_32bit</value>
+ </data>
+ <data>
+  <variable>Version</variable>
+  <value type="int">1</value>
+ </data>
+</qtcreator>
