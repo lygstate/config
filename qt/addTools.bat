@@ -1,5 +1,6 @@
 set QTROOT=C:\Qt
 set QTCREATOR_ROOT=%QTROOT%\qtcreator-5.0.0
+rd /s /q %AppData%\QtProject\qtcreator
 rd /s /q %QTCREATOR_ROOT%\share\qtcreator\QtProject
 mkdir %QTCREATOR_ROOT%\share\qtcreator\QtProject
 copy QtCreator.ini %QTCREATOR_ROOT%\share\qtcreator\QtProject
@@ -8,6 +9,19 @@ copy qtcreator %QTCREATOR_ROOT%\share\qtcreator\QtProject\qtcreator\
 set PATH=%PATH%;%QTCREATOR_ROOT%\bin
 ::cmd /k
 :: sdktool https://github.com/qt-creator/qt-creator/tree/master/src/tools/sdktool
+
+sdktool addQt ^
+    --id "company.product.qt5.12.10.msvc2015_32bit" ^
+    --name "Qt 5.12.10 MSVC2015 32bit" ^
+    --qmake %QTROOT%\Qt5.12.10\5.12.10\msvc2015\bin\qmake.exe ^
+    --type Qt4ProjectManager.QtVersion.Desktop
+sdktool addKit ^
+    --id "company.product.kit.qt5.12.10.msvc2015_32bit" ^
+    --name "Desktop Qt 5.12.10 MSVC2015 32bit" ^
+    --devicetype Desktop ^
+    --qt "company.product.qt5.12.10.msvc2015_32bit" ^
+    --Ctoolchain "x86-windows-msvc2015-pe-32bit" ^
+    --Cxxtoolchain "x86-windows-msvc2015-pe-32bit"
 
 sdktool addQt ^
     --id "company.product.qt5.1.1.msvc2010_opengl_32bit" ^
@@ -60,18 +74,5 @@ sdktool addKit ^
     --qt "company.product.qt5.9.9.msvc2015_64bit" ^
     --Ctoolchain "x86-windows-msvc2015-pe-64bit" ^
     --Cxxtoolchain "x86-windows-msvc2015-pe-64bit"
-
-sdktool addQt ^
-    --id "company.product.qt5.12.10.msvc2015_32bit" ^
-    --name "Qt 5.12.10 MSVC2015 32bit" ^
-    --qmake %QTROOT%\Qt5.12.10\5.12.10\msvc2015\bin\qmake.exe ^
-    --type Qt4ProjectManager.QtVersion.Desktop
-sdktool addKit ^
-    --id "company.product.kit.qt5.12.10.msvc2015_32bit" ^
-    --name "Desktop Qt 5.12.10 MSVC2015 32bit" ^
-    --devicetype Desktop ^
-    --qt "company.product.qt5.12.10.msvc2015_32bit" ^
-    --Ctoolchain "x86-windows-msvc2015-pe-32bit" ^
-    --Cxxtoolchain "x86-windows-msvc2015-pe-32bit"
 
 pause

@@ -3,6 +3,7 @@
 备份C:\Qt\Qt5.12.10\Tools\QtCreator\share\qtcreator\QtProject
 执行addTools.bat
 
-
-
-:: PATH=${PATH};C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64;%{Qt:QT_INSTALL_PREFIX}/xtal/kernel/bin
+```
+PATH=${WindowsSdkDir}\bin\${WindowsSDKLibVersion}\x86;${PATH}
+QT_QPA_PLATFORM_PLUGIN_PATH=%{Qt:QT_INSTALL_PREFIX}\plugins
+```
